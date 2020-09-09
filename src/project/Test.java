@@ -3,8 +3,6 @@ package project;
 public class Test {
     public boolean getTest(String input, int output, int result){
         
-        Boj boj = new Boj();
-        
         if(result == output){
         System.out.println("Test 성공! input : "+input);
            return true;  
@@ -16,8 +14,6 @@ public class Test {
     }
     
     public boolean getTest(String input, String output, String result){
-        
-        Boj boj = new Boj();
         
         if(result.equals(output)){
         System.out.println("Test 성공! input : "+input);
