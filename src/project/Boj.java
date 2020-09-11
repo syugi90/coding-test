@@ -2,9 +2,42 @@ package project;
 
 import java.io.*;
 import java.util.StringTokenizer;
+import java.util.Scanner;
 
 public class Boj{
 
+	//===============================================================	
+	// 2020-09-10 (목)
+    //===============================================================
+	
+	//A+B -5
+	public void q10952() throws IOException {
+		Scanner sc = new Scanner(System.in);
+		boolean flag = true; 
+		while(flag){
+			int a = sc.nextInt();
+			int b = sc.nextInt();
+
+			if(a == 0 && b == 0){
+				flag = false; 		
+			}else{
+				System.out.println(a+b);
+			}
+		}
+   }
+	
+	//A+B -4
+	public void q10951() throws IOException {
+		Scanner sc = new Scanner(System.in);
+		
+		while( sc.hasNextInt()) { 
+			int a = sc.nextInt();
+			int b = sc.nextInt();
+			System.out.println(a+b);
+		}
+	
+   }
+	
     //===============================================================
     // 2020-09-09 (수)
     //===============================================================

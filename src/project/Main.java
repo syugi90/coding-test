@@ -29,32 +29,21 @@ public class Main {
         // if(!ts.getTest("23,40","22 55",boj.q2884(23,40)))  return;
         // if(!ts.getTest("22,55","22 10",boj.q2884(22,55)))  return;
         // if(!ts.getTest("0,0","23 15",boj.q2884(0,0)))  return;
-        
-        //2739번 구구단
-        //boj.q2739(2);
-        
-        // q15552 빠른 A+B
-         // boj.q15552();     
-	
-		//2741번 N찍기
-		//boj.q2741();
+
+		//boj.q10951();
 		
-		//11021번 A+B-7
-		//boj.q11021();
+		//스킬테스트
+		SkillTest st = new SkillTest();
+		if(!ts.getTest("", 5 , st.skillTest0911(5, new int[]{2,3}, new int[]{1,4}))) return;
+		if(!ts.getTest("", 4 , st.skillTest0911(5, new int[]{1,5}, new int[]{2,3}))) return;
+		if(!ts.getTest("", 4 , st.skillTest0911(5, new int[]{2,3}, new int[]{5,3}))) return;
+		if(!ts.getTest("", 5 , st.skillTest0911(5, new int[]{2,4}, new int[]{3,1}))) return;
+		if(!ts.getTest("", 5 , st.skillTest0911(5, new int[]{2,4}, new int[]{1,3}))) return;
+		if(!ts.getTest("", 4 , st.skillTest0911(5, new int[]{1,2,5}, new int[]{3,4}))) return;
 		
-		//11022번 A+B-8
-		//boj.q11022();
 		
-		//2438번 별찍기 
-		//boj.q2438();
-			
-		//2459번 별찍기 2
-		//boj.q2439();
 		
-		//10871 번 X보다 작은 수
-		boj.q10871();
-		
-        System.out.println("================[완료!!]=======================");
+		System.out.println("================[완료!!]=======================");
    }
 
 }

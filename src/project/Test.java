@@ -1,6 +1,7 @@
 package project;
 
 public class Test {
+
     public boolean getTest(String input, int output, int result){
         
         if(result == output){
