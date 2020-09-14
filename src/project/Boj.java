@@ -7,6 +7,75 @@ import java.util.Scanner;
 public class Boj{
 
 	//===============================================================	
+	// 2020-09-14 (월)
+    //===============================================================
+	
+	//상근날드 
+	public void q5543() throws IOException {
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		int burger = 0;
+		int drink  = 0; 
+		for(int i=0; i<3; i++){
+			int num = Integer.parseInt(br.readLine());
+			if(burger == 0) burger = num;
+			
+			if(num < burger){
+				burger = num;
+			}
+		}
+		
+		for(int i=0; i<2; i++){
+			int num = Integer.parseInt(br.readLine());
+			if(drink == 0) drink = num;
+			
+			if(num < drink){
+				drink = num;
+			}
+		}
+		
+		System.out.println(burger+drink-50);
+	}
+	
+	//평균점수
+	public void q10039() throws IOException{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		int cnt = 0;
+		int sum = 0;
+		while(cnt < 5){
+			int num = Integer.parseInt(br.readLine());
+			if(num < 40) num = 40;
+			sum+=num;  
+			cnt++;
+		}
+		
+		System.out.println(sum/cnt);
+		
+	}
+	
+	//더하기 사이클 
+	public int q1110(int n) throws IOException{
+		
+		//BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		//int num = Integer.parseInt(br.readLine());
+		int num = n; 
+		
+		int cnt = 0; 
+		int target = num; 
+		
+		do{
+			num = (num%10)*10 + (((num/10)+(num%10))%10);
+			cnt++;
+			
+		}while(num != target);
+			
+		return cnt; 
+		
+	}
+	
+	//===============================================================	
 	// 2020-09-10 (목)
     //===============================================================
 	

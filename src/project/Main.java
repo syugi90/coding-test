@@ -32,14 +32,24 @@ public class Main {
 
 		//boj.q10951();
 		
+		//21110번 더하기 사이클 
+		// if(!ts.getTest("26" ,4,boj.q1110(26))) return; 
+		// if(!ts.getTest("55" ,3,boj.q1110(55))) return; 
+		// if(!ts.getTest("1"  ,60,boj.q1110(1))) return; 
+		// if(!ts.getTest("0"  ,1,boj.q1110(0))) return; 
+		
+		boj.q5543();
+		
+			
 		//스킬테스트
-		SkillTest st = new SkillTest();
-		if(!ts.getTest("", 5 , st.skillTest0911(5, new int[]{2,3}, new int[]{1,4}))) return;
-		if(!ts.getTest("", 4 , st.skillTest0911(5, new int[]{1,5}, new int[]{2,3}))) return;
-		if(!ts.getTest("", 4 , st.skillTest0911(5, new int[]{2,3}, new int[]{5,3}))) return;
-		if(!ts.getTest("", 5 , st.skillTest0911(5, new int[]{2,4}, new int[]{3,1}))) return;
-		if(!ts.getTest("", 5 , st.skillTest0911(5, new int[]{2,4}, new int[]{1,3}))) return;
-		if(!ts.getTest("", 4 , st.skillTest0911(5, new int[]{1,2,5}, new int[]{3,4}))) return;
+		// SkillTest st = new SkillTest();
+		// if(!ts.getTest("", 5 , st.skillTest0911(5, new int[]{2,3}, new int[]{1,4}))) return;
+		// if(!ts.getTest("", 4 , st.skillTest0911(5, new int[]{1,5}, new int[]{2,3}))) return;
+		// if(!ts.getTest("", 4 , st.skillTest0911(5, new int[]{2,3}, new int[]{5,3}))) return;
+		// if(!ts.getTest("", 5 , st.skillTest0911(5, new int[]{2,4}, new int[]{3,1}))) return;
+		// if(!ts.getTest("", 5 , st.skillTest0911(5, new int[]{2,4}, new int[]{1,3}))) return;
+		// if(!ts.getTest("", 4 , st.skillTest0911(5, new int[]{1,2,5}, new int[]{3,4}))) return;
+		
 		
 		
 		
