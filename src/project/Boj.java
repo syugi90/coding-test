@@ -2,10 +2,97 @@ package project;
 
 import java.io.*;
 import java.util.StringTokenizer;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Boj{
 
+	//===============================================================	
+	// 2020-09-15 (화)
+    //===============================================================
+	
+	//별 찍기 - 21
+	public void q10996(){
+		System.out.print("========= 시작========\n");
+		Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+		for(int i=0; i<n; i++){
+			
+		}
+		
+	}
+	
+	
+	//별 찍기 - 9
+	public void q2446() {
+		Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+		int len = n*2-1;
+		for(int i=0; i<n; i++){
+			for(int j=0; j<len-i; j++){
+				if(j<i){
+					System.out.print(" ");
+				}else{
+					System.out.print("*");
+				}
+			}
+			System.out.print("\n");
+		}
+		for(int i=n-1; i>0; i--){
+			for(int j=0; j<len-i+1; j++){
+				 if(j<i-1){
+					System.out.print(" ");
+				 }else{
+				 	System.out.print("*");
+				 }
+			}
+			System.out.print("\n");
+		}
+		
+	}
+	
+	//별 찍기 - 13
+	public void q2523() {
+		
+		Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+		
+		int len = 2*n-1; 
+		int harf = len/2+len%2; 
+		for(int i=0; i<harf; i++){
+			for(int j=0; j<=i; j++){
+				System.out.print("*");
+			}
+			System.out.print("\n");
+		}
+		for(int i=len-harf-1; i>=0; i--){
+			for(int j=0; j<=i; j++){
+				System.out.print("*");
+			}
+			System.out.print("\n");
+		}
+		
+	}
+	
+	//세 수
+	public void q10817() {
+		
+		Scanner sc = new Scanner(System.in);
+        int [] a = new int [3];
+
+        for (int i=0; i<3; i++)
+            a[i] = sc.nextInt();
+
+        Arrays.sort(a);
+
+		System.out.println(a[1]);
+		
+		
+	}
+		
+	
+	
+	
 	//===============================================================	
 	// 2020-09-14 (월)
     //===============================================================

@@ -38,7 +38,7 @@ public class Main {
 		// if(!ts.getTest("1"  ,60,boj.q1110(1))) return; 
 		// if(!ts.getTest("0"  ,1,boj.q1110(0))) return; 
 		
-		boj.q5543();
+		boj.q10996();
 		
 			
 		//스킬테스트
