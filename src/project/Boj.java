@@ -7,6 +7,103 @@ import java.util.Scanner;
 
 public class Boj{
 
+  
+	//===============================================================	
+	// 2020-09-16 (수)
+    //===============================================================
+    
+    //숫자의 개수 
+    public void q2577() throws IOException {
+      BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+      int A = Integer.parseInt(br.readLine());  
+      int B = Integer.parseInt(br.readLine());  
+      int C = Integer.parseInt(br.readLine());  
+      
+      int num = A*B*C;
+      System.out.println(num);
+      String str = Integer.toString(num);
+      String[] arr = str.split("");
+      int[] result = new int[10];
+      
+      for(int i=0; i<result.length; i++){
+        for(int j=0; j<arr.length; j++){
+          if(i == Integer.parseInt(arr[j])){
+            result[i] = result[i]+1;   
+          }
+        }
+      }
+      
+      for(int j=0; j<result.length; j++){
+        System.out.println(result[j]);  
+      }
+    }
+    
+    //최댓값
+    public void q2562() throws IOException {
+      BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+      int n = 9;
+  
+      int max = 0;
+      int idx = 0;
+      for(int i =0; i<n; i++){
+        int num = Integer.parseInt(br.readLine());  
+        
+        if(max < num){
+          max = num;
+          idx = i+1;
+        }
+      }
+      
+      System.out.println(max);
+      System.out.println(idx);
+    }
+    
+    //최소, 최대
+    public void q10818() throws IOException {
+      BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+      int n = Integer.parseInt(br.readLine().trim());
+      String str = br.readLine();
+      String[] strArr = str.split(" ");
+    
+      int[] arr = new int[n];  
+      for(int i =0; i<n; i++){
+        arr[i] = Integer.parseInt(strArr[i]);
+      }
+      
+      int max = arr[0];
+      int min = arr[0];
+      for(int i=0; i<n; i++){
+        if(max < arr[i]){
+          max = arr[i];
+        }
+        
+        if(min>arr[i]){
+          min = arr[i];
+        }
+      }
+      
+      System.out.println(min+" "+max);
+      
+    }
+    
+    //별 찍기 - 21
+    public void q10996(){
+      Scanner sc = new Scanner(System.in);
+      int n = sc.nextInt();
+      int harf = n/2+n%2;
+      System.out.println("harf : "+harf);
+          
+      for(int i=0; i<n; i++){
+        for(int j=0; j<n; j++){
+          if(j==harf) System.out.print("\n"); 
+          if(j>0) System.out.print(" "); 
+          System.out.print("*"); 
+             
+        }  
+        System.out.print("\n"); 
+      }
+    }
+    
 	//===============================================================	
 	// 2020-09-15 (화)
     //===============================================================
