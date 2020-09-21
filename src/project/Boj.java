@@ -7,7 +7,116 @@ import java.util.Scanner;
 
 public class Boj{
 
-  
+	//===============================================================
+	// 2020-09-21 (월)
+    //===============================================================
+	public void q4673(){
+		int n = 10000;
+		boolean[] arr = new boolean[n];
+
+
+		for(int i=0; i<n; i++){
+
+			int num =i; 
+			int sum =num;
+			do{
+			  sum += num%10;
+			  num = num/10;
+			}while((num != 0));
+
+			if(sum<n){
+			  arr[sum] = true;
+			}
+
+		}
+
+		for(int j=0; j<arr.length; j++){
+		  if(!arr[j]) System.out.println(j);
+		}
+	
+	}
+		
+		
+	public void q4344() throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int n = Integer.parseInt(br.readLine());  
+
+		for(int i=0; i<n; i++){
+		  String str = br.readLine();  
+		  StringTokenizer st = new StringTokenizer(str);
+
+		  int cnt = Integer.parseInt(st.nextToken());
+		  int[] arr = new int[cnt];
+		  int sum = 0;
+			for(int k=0; k<cnt; k++){
+			int num = Integer.parseInt(st.nextToken());
+			arr[k] = num; 
+			sum += num; 
+		  }
+
+		  double avg = sum/cnt; 
+		  int moreCnt = 0;
+		  for(int j=0; j<arr.length; j++){
+			if(arr[j] > avg) moreCnt++; 
+		  }
+
+		  System.out.println(String.format("%.3f", (moreCnt/(double)cnt)*100)+"%");
+		}
+	}
+	
+	public void q8958() throws IOException {
+		 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int n = Integer.parseInt(br.readLine());  
+
+
+		for(int i=0; i<n; i++){
+		  String str = br.readLine();  
+		  String[] arr = str.split("");
+		  int num = 0;
+		  int sum = 0;
+		  for(int j=0; j<arr.length; j++){
+
+			if(arr[j].equals("O")){
+			  num++;
+			  sum += num;
+			}else{
+			  num = 0;
+			}
+		  }
+
+		  System.out.println(sum);
+		}
+    
+	}
+		
+		
+	public void q1546() throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    int n = Integer.parseInt(br.readLine());  
+    String str = br.readLine();  
+    
+    
+    double max = 0; 
+    StringTokenizer st = new StringTokenizer(str);
+	  int[] arr = new int[n];
+	  for(int i=0; i<n; i++){
+  	  int num = Integer.parseInt(st.nextToken());
+  	  arr[i] = num;
+  	  if(num > max){
+  	    max = num; 
+  	  }
+	  }  
+
+	  float sum = 0;
+	  for(int i=0; i<arr.length; i++){
+	    sum += (arr[i]/max)*100;
+	  }
+	  
+	  System.out.println(sum/n);
+	  
+	}
+		
+		  
 	//===============================================================	
 	// 2020-09-16 (수)
     //===============================================================
