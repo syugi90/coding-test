@@ -1,12 +1,381 @@
 package project;
 
 import java.io.*;
-import java.util.StringTokenizer;
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
 
 public class Boj{
+	
+	//===============================================================
+	// 2020-09-24 (목)
+    //===============================================================
+	
+	public void q2775() throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    
+		int n = Integer.parseInt(br.readLine());
 
+		for(int m=0; m<n; m++){
+		  int ch = Integer.parseInt(br.readLine());
+		  int ho = Integer.parseInt(br.readLine());
+
+		  int[][] apt = new int[ch+1][ho+1];
+
+		  for(int i=0; i<=ch; i++){
+			for(int j=0; j<=ho; j++){
+			  if(i==0){
+				apt[0][j]= j+1;
+			  }else{
+				for(int k=0; k<=j; k++){
+				  apt[i][j] += apt[i-1][k];
+				}
+			  }
+			  //System.out.println("apt["+i+"]["+j+"] : "+apt[i][j]);
+			}
+		  }
+
+		  System.out.println(apt[ch][ho-1]);
+		}
+	}
+		
+	public void q2869() throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+		String str = br.readLine();
+
+		StringTokenizer st = new StringTokenizer(str);
+		int up     = Integer.parseInt(st.nextToken());
+		int down   = Integer.parseInt(st.nextToken());
+		int length = Integer.parseInt(st.nextToken());
+
+
+		int day = (length - down) / (up - down);
+			if ((length - down) % (up - down) != 0)
+				day++;
+
+
+		System.out.println(day);
+	}
+		
+	
+	public void q1193() throws IOException {
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    
+		int n = Integer.parseInt(br.readLine());
+
+		int sum = 0; //이전 갯수 합 
+		int cnt = 1; //대각선 갯수 
+		String result ="";
+
+		while(true){
+
+		  if(n <= (sum+cnt)){
+
+			if(cnt%2 == 0){
+			  result = (n-sum) +"/" + (cnt - (n-sum-1)) ;
+			  break; 
+			}else{
+			  result = (cnt - (n-sum-1)) +"/" + (n-sum) ;
+			  break; 
+			}
+
+		  }else{
+			sum += cnt; 
+			cnt ++;
+		  }
+
+		}
+
+		System.out.println(result);
+	}
+		
+		
+	//===============================================================
+	// 2020-09-22 (화)
+    //===============================================================
+	public void q2292() throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    
+		int n = Integer.parseInt(br.readLine());
+
+		int cnt =1;
+		int num =1;
+		while(n > num){
+		  num += (6*cnt);
+		  cnt ++;
+		}
+
+		System.out.println(cnt);
+	}
+	
+	public void q2839() throws IOException {
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    
+		int n = Integer.parseInt(br.readLine());
+		
+		int result = -1;
+    
+		int fiveCnt = n/5;
+
+		for(int i=fiveCnt; i>=0; i-- ){
+		  int temp = n -(i*5);  
+		  if(temp > 0 && temp%3 == 0){
+			result = i + temp/3;
+			break; 
+		  }
+		}
+		
+		System.out.println(result);
+
+	}
+
+	public void q1316() throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+		int n = Integer.parseInt(br.readLine());
+		int cnt = 0;
+
+		for(int k=0; k<n; k++){
+
+		  List<Character> list = new ArrayList<Character>();
+		  boolean flag = true; 
+
+		  String str = br.readLine();
+
+		  char prev = str.charAt(0);
+		  list.add(prev);
+
+		  for(int i=1; i<str.length(); i++){
+			char c = str.charAt(i);
+			if(c!=prev && list.contains(c)){
+				flag = false; 
+				break; 
+			}
+			list.add(c);
+			prev = c; 
+		  }
+
+		  if(flag){
+			cnt++;
+		  }
+		}
+
+		System.out.println(cnt);
+
+	}
+	
+	
+	public void q2941() throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    
+		String str = br.readLine();
+		String[] arr = {"c=","c-","dz=","d-","lj","nj","s=","z="};
+
+		for(String a:arr){
+		  if(str.contains(a)){
+			str = str.replaceAll(a," ");
+		  }
+		}
+
+		System.out.println(str.length());
+	}
+	
+	public void q5622() throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+		char[] input =  br.readLine().trim().toCharArray();
+
+		int count = 0;
+		for(char c:input){
+
+		  switch(c) {
+			case 'A' : case 'B': case 'C' : 
+					count += 3;
+					break;
+
+				case 'D' : case 'E': case 'F' : 
+					count += 4;
+					break;
+
+				case 'G' : case 'H': case 'I' : 
+					count += 5;
+					break;
+
+				case 'J' : case 'K': case 'L' : 
+					count += 6;
+					break;	
+
+				case 'M' : case 'N': case 'O' : 
+					count += 7;
+					break;	
+
+				case 'P' : case 'Q': case 'R' : case 'S' : 
+					count += 8;
+					break;	
+
+				case 'T' : case 'U': case 'V' : 
+					count += 9;
+					break;	
+
+				case 'W' : case 'X': case 'Y' : case 'Z' : 
+					count += 10;
+					break;	
+		  }
+		}
+
+		System.out.println(count);
+
+		
+	}
+	
+	public void q2908() throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    
+		String str = br.readLine().trim();
+		String[] arr = str.split(" ");
+		String[] result ={"",""};
+
+		for(int i=0; i<arr.length; i++){
+		  String[] sArr = arr[i].split("");
+
+		  for(int k=sArr.length-1; k>=0; k-- ){
+			result[i] += sArr[k];
+		  }
+		}
+
+		int A = Integer.parseInt(result[0]); 
+		int B = Integer.parseInt(result[1]); 
+
+		System.out.println(A > B ? A : B);
+	}	
+		
+	public void q1152() throws IOException {
+		 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    
+		String str = br.readLine().trim();
+		String[] arr = str.split(" ");
+
+		int cnt = 0 ;
+		for(String a : arr){
+		  if(a.length() > 0){
+			cnt++;
+		  }
+		}
+		System.out.println(cnt);
+	}
+		
+	public void q1157() throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    
+		String str = br.readLine();
+		String[] arr = str.split("");
+		HashMap<String,Integer> map = new HashMap<String,Integer>();
+
+		for(int i=0; i<arr.length; i++){
+		  int cnt = 0;
+		  String c = arr[i].toLowerCase(); 
+		  if(map.get(c)!= null){
+			cnt = map.get(c); 
+		  }
+
+		  map.put(c,cnt+1);
+		}
+
+		String rst = "";
+		int maxCnt = 0;
+
+		Set<String> keys = map.keySet();
+		for (String key : keys) {
+
+		  int cnt = map.get(key); 
+		  if(cnt > maxCnt){
+			rst = key; 
+			maxCnt = cnt;
+		  }else if(cnt == maxCnt){
+			rst = "?";
+		  }
+		}
+		System.out.println(rst.toUpperCase());
+		
+	}
+	public void q10809() throws IOException{
+	 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        
+		String str = br.readLine();
+    
+		for(char c = 'a' ; c <= 'z' ; c++){
+			 System.out.print(str.indexOf(c)+" ");
+		}
+	}
+		
+	
+	public void q11720() throws IOException{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        
+		int n = Integer.parseInt(br.readLine());
+		String str = br.readLine();
+		String[] arr = str.split("");
+		int sum =0;
+
+		for(int i=0; i<arr.length; i++){
+		  sum += Integer.parseInt(arr[i]);  
+		}
+
+
+		System.out.println(sum);
+	}
+	
+	public void q11654() throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    	
+		String a = br.readLine().trim();
+    	int n = a.charAt(0); 
+		
+    	System.out.println(n);
+	}
+	
+	public void q1065() throws IOException {
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        
+		int n = Integer.parseInt(br.readLine().trim());
+   		int cnt =0; 
+
+    	for(int i=1; i<=n; i++){   
+     
+			boolean flag = true; 
+			if(i>99){
+				  int num =i; 
+				  int diff =0; 
+				  int curr = 0;
+				  int next = 0; 
+
+				  curr = num%10;
+				  num  = num/10;
+				  next = num%10; 
+				  diff = next-curr; 
+
+				  while(num/10 != 0){
+						curr =  next;
+						num  = num/10; 
+						next = num%10; 
+						if(diff != (next-curr)){
+						  flag = false; 
+						  break; 
+						}
+				  }  
+		   }
+
+		  if(flag){
+			cnt++; 
+		  }
+
+		}
+		System.out.println(cnt);
+	}
+	
+	
 	//===============================================================
 	// 2020-09-21 (월)
     //===============================================================
