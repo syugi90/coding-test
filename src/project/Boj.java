@@ -9,6 +9,37 @@ public class Boj{
 	//===============================================================
 	// 2020-09-25 (금)
     //===============================================================
+	public void q1929() throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    
+		String str = br.readLine();
+		StringTokenizer st = new StringTokenizer(str);
+		int m     = Integer.parseInt(st.nextToken());
+		int n     = Integer.parseInt(st.nextToken());
+
+		for(int i=m; i<=n; i++){
+		  boolean flag = true; 
+		  int num = i; 
+		  if(num == 1){
+			flag = false;
+		  }
+
+		  int len = (int)Math.sqrt(num)+1;
+		  for(int j=2; j<len; j++){
+			if(num%j == 0){
+			  flag = false;
+			  break;
+			}
+		  }
+		  if(flag){
+			System.out.println(num);
+		  }
+		}
+	}
+	
+		
+		
+	
 	public void q2581() throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     
@@ -652,18 +683,6 @@ public class Boj{
 	//===============================================================	
 	// 2020-09-15 (화)
     //===============================================================
-	
-	//별 찍기 - 21
-	public void q10996(){
-		System.out.print("========= 시작========\n");
-		Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-		for(int i=0; i<n; i++){
-			
-		}
-		
-	}
-	
 	
 	//별 찍기 - 9
 	public void q2446() {
