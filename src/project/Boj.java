@@ -5,6 +5,73 @@ import java.util.*;
 
 public class Boj{
 	
+	
+	//===============================================================
+	// 2020-09-25 (금)
+    //===============================================================
+	public void q2581() throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    
+		int m = Integer.parseInt(br.readLine());
+		int n = Integer.parseInt(br.readLine());
+
+		int sum =0;
+		int min =10000;
+
+		for(int i=m; i<n; i++){
+		  boolean flag = true; 
+		  int num = i; 
+		  if(num == 1){
+			flag = false;
+		  }
+
+		  for(int j=2; j<num; j++){
+			if(num%j == 0){
+			  flag = false;
+			  break;
+			}
+		  }
+		  if(flag){
+			sum+= num;
+			if(min>num) min = num; 
+		  }
+		}
+
+		if(sum == 0){
+		  System.out.println(-1);  
+		}else{
+
+		  System.out.println(sum);
+		  System.out.println(min);
+		}
+		
+	}
+	
+	public void q1978() throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    
+		int n = Integer.parseInt(br.readLine());
+		String[] str = br.readLine().split(" ");
+		int cnt = 0; 
+
+		for(int i=0; i<str.length; i++){
+		  int num = Integer.parseInt(str[i]);
+		  if(num == 1){
+			cnt++;
+		  }
+		  for(int j=2; j<num; j++){
+			if(num%j == 0){
+			  cnt++;
+			  break; 
+			}
+		  }
+		}
+
+		System.out.println(n-cnt);
+
+	}
+	
+	
 	//===============================================================
 	// 2020-09-24 (목)
     //===============================================================
