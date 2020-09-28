@@ -4,8 +4,207 @@ import java.io.*;
 import java.util.*;
 
 public class Boj{
+	//===============================================================
+	// 2020-09-28 (월)
+    //===============================================================
+	public void q10870() throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int n = Integer.parseInt(br.readLine());
+
+		System.out.println(pibo(n));
+	}
+	public int pibo(int n){
+		if (n<=1)  return n;
+		return pibo(n-2)+pibo(n-1);
+	}
+		
+		
+	public void q10872() throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int n = Integer.parseInt(br.readLine());
+
+		System.out.println(factorial(n));
+	}
+	public int factorial(int n){
+		if (n<=1)  return 1;
+		return n * factorial(n-1);
+	}
+		
 	
+	public void q1002() throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+		int R = Integer.parseInt(br.readLine());
+		System.out.printf("%.6f\n", (double) R * R * 3.1415926535897932384626433);
+		System.out.printf("%.6f\n", (double) 2 * R * R);
+	}	
+		
+	public void q4153() throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+		String str = br.readLine();
+
+		StringTokenizer st = new StringTokenizer(str);
+		int x  = Integer.parseInt(st.nextToken());
+		int y  = Integer.parseInt(st.nextToken());
+		int z  = Integer.parseInt(st.nextToken());
+
+		while(!( x == 0 && y == 0 && z == 0)){
+
+		  boolean flag = false; 
+
+		  if(((x*x) + (y*y)) == z*z){
+			flag = true; 
+
+		  }else if(((y*y) + (z*z)) == x*x){
+			flag = true; 
+
+		  }else if(((z*z) + (x*x)) == y*y){
+			flag = true; 
+		  }      
+
+		  if(flag){
+			System.out.println("right");
+		  }else{
+			System.out.println("wrong");
+		  }
+
+		  str = br.readLine();
+		  st = new StringTokenizer(str);
+			x  = Integer.parseInt(st.nextToken());
+			y  = Integer.parseInt(st.nextToken());
+			z  = Integer.parseInt(st.nextToken());
+		}
+	}
+		
+		
+	public void q3009() throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		int[] x = new int[3];
+		int[] y = new int[3];
+		int resultX = 0;
+		int resultY = 0;
+
+		for(int i=0; i<3; i++){
+			String str = br.readLine();
+
+			StringTokenizer st = new StringTokenizer(str);
+			x[i]  = Integer.parseInt(st.nextToken());
+			y[i]  = Integer.parseInt(st.nextToken());
+
+		}
+
+		if(x[0] != x[1]){
+		  if(x[0] == x[2]){
+			resultX = x[1];
+		  }else{
+			resultX = x[0];
+		  }
+		}else{
+		  resultX = x[2];
+		}
+
+
+		if(y[0] != y[1]){
+		  if(y[0] == y[2]){
+			resultY = y[1];
+		  }else{
+			resultY = y[0];
+		  }
+		}else{
+		  resultY = y[2];
+		}
+
+		System.out.println(resultX+" "+resultY);
+	}
 	
+	public void q1085() throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+		String str = br.readLine();
+		
+		StringTokenizer st = new StringTokenizer(str);
+		int x     = Integer.parseInt(st.nextToken());
+		int y     = Integer.parseInt(st.nextToken());
+		int w     = Integer.parseInt(st.nextToken());
+		int h     = Integer.parseInt(st.nextToken());
+		
+		
+		System.out.println(Math.min(Math.min(w-x,x) , Math.min(h-y,y)));
+	}
+		
+	public void q9020() throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    
+		boolean[] prime = new boolean[10000+1]; // true:소수아님, false:소수 
+		prime[0] = prime[1] = true; 
+
+		for (int i=2; i<=Math.sqrt(prime.length); i++) {
+				if (prime[i]) continue;
+
+				for (int j= i*i; j<prime.length; j+=i) {
+					prime[j] = true;
+				}
+			}
+
+
+		int cnt = Integer.parseInt(br.readLine());
+
+		for(int i=0; i<cnt; i++){
+		  int n = Integer.parseInt(br.readLine());
+
+		  int p = n/2;
+		  int q = n/2; 
+
+		  while(q > 0){
+
+			if(prime[p] == false && prime[q] == false){
+			  System.out.println(p+" "+q);
+			  break;
+			}
+
+			p--;
+			q++;
+
+		  }
+		}
+	}
+	
+	public void q4948() throws IOException {
+		 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    
+		int n = Integer.parseInt(br.readLine());
+
+		while(n != 0){
+
+		  int cnt = 0; 
+		  for(int i=n+1; i<=n*2; i++){
+			boolean flag = true; 
+			if(i == 1){
+			  flag = false;
+			}
+
+			int len = (int)Math.sqrt(i)+1;
+			for(int j=2; j<len; j++){
+			  if(i%j == 0){
+				flag = false;
+				break;
+			  }
+			}
+			if(flag){
+			  cnt++; 
+			}
+		  }
+
+		  System.out.println(cnt);
+
+		  n = Integer.parseInt(br.readLine());  
+		}
+		
+	}
+		
+		
 	//===============================================================
 	// 2020-09-25 (금)
     //===============================================================
