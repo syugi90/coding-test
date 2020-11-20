@@ -1,5 +1,3 @@
-import java.util.*; 
-
 //두개뽑아서 더하기 
 import java.util.*; 
 
